@@ -84,31 +84,9 @@ window :
      p_codes :
       -
         code : |1+
-         // nNombreADeviner
+         PL_NOMBRE_A_DEVINER()
          
-         si SAI_Un_entier < nNombreADeviner alors
          
-         	Info("Trop petit")
-         
-         FIN
-         
-         si SAI_Un_entier > nNombreADeviner alors
-         
-         	Info("Trop grand")
-         
-         FIN
-         
-         Si SAI_Un_entier = nNombreADeviner alors
-         
-         	InfoAvecDélai(2 s, "Tu as gagné")
-         
-         	si OuiNon("Veux-tu refaire une partie") alors
-         
-         		nNombreADeviner = Hasard(1,100)
-         
-         	FIN
-         
-         FIN
         type : 18
       -
         type : 161
@@ -268,6 +246,36 @@ window :
       FIN
       
       // Info("nUnEntier : " + nUnEntier)
+     type : 458752
+   -
+     name : PL_NOMBRE_A_DEVINER
+     procedure_id : 1723450524823206623
+     type_code : 14
+     code : |1+
+      procédure PL_NOMBRE_A_DEVINER()
+      SI SAI_Un_entier < nNombreADeviner ALORS
+      
+      	Info("Trop petit")
+      
+      FIN
+      
+      SI SAI_Un_entier > nNombreADeviner ALORS
+      
+      	Info("Trop grand")
+      
+      FIN
+      
+      SI SAI_Un_entier = nNombreADeviner ALORS
+      
+      	InfoAvecDélai(2 s, "Tu as gagné")
+      
+      	SI OuiNon("Veux-tu refaire une partie") ALORS
+      
+      		nNombreADeviner = Hasard(1,100)
+      
+      	FIN
+      
+      FIN
      type : 458752
   procedure_templates : []
   property_templates : []
